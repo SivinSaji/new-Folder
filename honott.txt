@@ -1,0 +1,394 @@
+Toast  World
+package com.example.helloworld; import android.os.Bundle;
+import android.app.Activity;
+import android.graphics.Color;
+import android.widget.RelativeLayout; import android.widget.TextView; import android.widget.Toast;
+public class MainActivity extends
+
+
+RelativeLayout ab; TextView cd; @0verride
+protected void onCreate(Bundle savedlnstancestate)
+
+super.on Create(savedInstanceState); setContentView(R.layout.activit)/_main), ab = (RelativeLayout)
+findV ie wByld(R.id.r/j;
+cd = (TextView) findViewByld(R.id./ez/Iz’/ew/l; ab.setBackgroundColor(Color.BLAC/0, 
+cd.setTextColor(Color.REDS, Toast.makeTezr(this, "Hello World", Toast.16N/fiTH_LONfi).show(};
+}
+
+
+Addition
+package com.example.addition; import android.os.Bundle; import android.app.Activity; import 
+android.view.View; import android.widget.EditText; import android.widget.TextView;
+public class MainActivity extends
+Act ivit y
+(
+@0verride
+protected void onCreate(Bundle savedlnstancestate)
+
+super.on Create(savedInstanceState);
+setContentView(R.layout.act/z//y_ma/n);
+
+public void sum(View v)
+
+EditText e1=(EditText)findViewById(R.id.eo’itTextI)
+
+EditText
+e2•(EditText)findViewById(R.id.eo’itText
+
+TextView t1={TextView)findViewById(R.id./xfi; int a =
+Integer.parseIn/{e1.getText().tostring()); int b =
+Integer.parseIn/{e2.getText().to string()); int c = a+b;
+t1.setText(Integer. to5trinp[c));
+/
+
+
+Alert Box
+package com.example.alertbox; import android.os.Bundle; import android.app.Activity; import 
+android.app.AlertDialog;
+import android.content.Dialoglnterface; import android.view.View;
+public class MainActivity extends Activity
+
+@0verride
+protected void onCreate(Bundle savedlnstancestate)
+
+super.on Create(savedInstanceState); setContentView(R.layout.act/u//y_ma/n);
+
+public void showAlert(View v)
+
+AlertDialog.Builder alertDB • new AlertDialog.Builder(this);alertDB.setTitl e("Your Title");
+alertDB.set Message("Click yes to exit!").setCancelable(false)
+.setPositiveButton(“Yes",new DialogInterface.0nClickListener(}
+
+public void onClick(DialogInterface dialog, int id)
+
+MainActivity.this.finish0:
+)).setNegativeButton("No",new DialogInterface.0nClickListener() (
+public void onClick(DialogInterface
+dialog, int id) (
+dialog.cancel();
+
+}):
+AlertDialog alertD = alertDB.create();
+alertD.show();
+
+
+
+Menu Program
+package com.example.menu; import android.as.Bundle; import android.app.Activity;
+import android.view.ContextMenu; import android.view.ContextMenu.ContextMen uImo;
+import android.view.Menu; import android.view.Menultem; import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast; public class MainActivity extends Activity
+(
+LinearLayout II; @0verride
+protected void onCreate(Bundle savedlnstancestate)
+(
+super.onCreate(savedInstancestate); setContentView(R.layout.ac//u//y_ma/n); ll•(LinearLayout) 
+findViewByld(R.id.linear/ayoofi; II.set0nCreateContextMenuListener(thi s):
+
+@0verride
+public boolean onCreate0ptionsMenu(Menu menu) (
+menu.add(0,0,0, “item 1“);
+menu.add(0,1,1, "item 2");
+menu.add(0,2,2, "item 3");
+return true;
+
+@0verride
+public boolean on0ptionsItemSelected(Menultem item) (
+super.on0ptionsItemSelected(item); Toast.maAeTex/fthis, item.getTitle().tostring(), 
+Toast.16NGTH_5HOP/'j.show0: return true;
+
+@0verride public void
+onCreateContextMenu(ContextMenu menu, View v,
+ContextMenulnfo menulnf a)
+(
+super.onCreateContextMenu(menu, v,
+menulnfo);
+menu.add(0,0,0, "item 1");
+menu.add(0,\,1, "item 2");
+menu.add(0,2,2, "item 3");
+)
+@0ve rri de public boolean
+onC ontextltemselected(Menultem item) (
+super.onContextItemSelected(item); Toast.make Feel(this, item.getTitle0, 
+Toast.GEN/fiTH_SHORT.shown,
+return true;
+)
+
+
+Radio Button 
+package com.example.radiobtn; import android.as.Bundle; import android.app.Activity; import 
+android.view.View; import
+android.view.View.OnClickListener; import android.widget.Button; import android.widget.RadioButton; 
+import android.widget.TextView; public class MainActivity extends Activity implement s 
+0nClicl‹Listener (
+RadioButton rdmale,rdfemale; Button btshow,btdefault;
+TextView txtmsg; @0verride protected void onCreate(Bundle savedlnstance State)
+
+super.onCreate(savedlnstancestate); setContentView(R.layout.activity_main),' rdmale = (RadioButton) 
+findViewById(R.id.rao’/oma/e);
+rdfemale = (RadioButton) findViewById(R.id. radioI‘emaIe), btshow = (Button) 
+findViewById(R.id.6uttonsho vVj, btdefault = (Button) findViewById(R.id.6uttondefaulfi, txtmsg = 
+(Te xt View) findViewById(R.id. /z/msp); txtmsg.set Text( ); btshow.set0nClickListener(this); 
+btdefault.set0nClickListener(this);
+
+@0verride
+public void onClick(View v)
+(
+Button action=(Button) v; if(action.getId0-=btshow.getId()) (
+String msg="You Are "; if(rdmale.is Checked())
+msg=msg+rdmale.getText().to string(); else if(rdfemale.isChecked()) msg=msg+rdfemale.getText().to 
+string(); txtmsg.set Text(msg);
+)
+else if(action.get Id()==btdefault.getld0)
+rdmale.set Checked(true); txtmsg.setText( );
+
+
+
+
+
+package com.example.spinner; import android.as.Bundle; import android.app.Activity; import 
+android.view.View; import
+android.widget.AdapterView.0nltemSel
+ectedListener;
+import android.widget.AdapterView; import android.widget.ArrayAdapter; import 
+android.widget.Spinner; import android.widget.Toast;
+public class MainActivity extends Activity implement s 0nltemSelectedListener
+
+String categoryg=("Automobile","Business","E ducation","Personal"};
+Spinner spin; @0verride
+protec ted void onCreate(Bundle
+savedlnstance State) (
+super.onCreate(savedlnstancestate); setContentView(R.layout.ac//v//y_ma/n); spin•(Spinner) 
+findViewByld(R.id.spinners), ArrayAdapter•String» arr • new ArrayAdapter<String›(this, 
+android.R.layout.simple_spinner_item,c ategory); arr.setDropDownViewResource(androi d.R.layout. sir 
+ple_ spinner_dropdo w'n_it em);
+spin.set Adapter(arr); spin.set0nItemSelectedListener(this);;
+
+@0verride public void
+onltemSelected(AdapterView•?› arg0,
+View arg1, int arg2, long arg3) (
+Toast.ma/re7ez/{this, "Selected : "
++spin.getSelectedItem(), Toast.1ENifiTH_SHORTl.show();
+
+@0ver ride
+public void onNothingSelected(AdapterView•?› arg0)
+(
+
+
+
+Check box
+package com.example.checkbox;
+import android.os.Bundle; import android.app.Activity; import android.view.View; import 
+android.widget.Button;
+import android.widget.CheckBox; import android.widget.TextView; public class MainActivity extends 
+Activity
+
+CheckBox cbPaint,cbRead,cbCook;
+Button btnShow; TextView tv; @0verride
+protected void onCreate(Bundle savedlnstancestate)
+(
+super.on Create(savedInstanceState); setContentView(R.layout.ac//v//y_ma/n);
+
+(TextView)findViewById(R.id. /vDetails),
+tv.setText(");
+/ public void onClickShow(View v)
+(
+cbPaint=(Checl‹Box)findViewById(R.id. c bPain#; cbRead=(Checl‹Box)findViewById(R.id. c d/7eao); 
+cbCook=(CheckBox)findViewById(R.id.c bCook),
+tv.setText("I Like ");
+if(cbPaint.isChecked0) T tv.setText(tv.getText().toString()+"\n"° cbPaint.get Text().to string());
+}
+if(cbRead.is Checked()) { tv.setText(tv.getText().toStringfi+ "\n“+cbRead.getText().toString());
+}
+if(cbCook.isChecked()) ( tv.setText(tv.getText().toString()+ "\n"+cbCook.getText().toString(});
+)
+if(!cbPaint.isChecked()&6!cbRead.isChe cked()6&!cbCook.isCheckedfi) ( tv.setText(");
+}
+
+
+
+View
+package com.example.imgview; import android.os.Bundle; import android.app.Activity; import 
+android.view.View;
+import android.widget.ImageView;
+public class MainActivity extends
+Act ivit y
+
+ImageV ie w imgVie w;
+@0verride
+protected void onCreate(Bundle
+savedlnstancestate) (
+super.on Create(savedInstanceState); setContentView(R.layout.ac//v//y_ma/n);
+/
+public void changeImg(View v)
+
+imgView • (ImageV iew)
+findV ie wByld(R.id./maye '/ekrfi; imgView.setImageResource(R.drawabl e./mp); }
+
+
+List View 
+package com.example.listview; import android.os.Bundle; import android.app.Activity; import 
+android.view.View;
+import android.widget.AdapterView; import android.widget.AdapterView.0nltemClic kListener;
+import android.widget.ArrayAdapter; import android.widget.ListView; import android.widget.Toast;
+public class MainActivity extends Activity implements OnltemClickListener
+(ListView lv;
+String cource§=("MCA“,“MBA","BCA",“BBA“,"B COM")
+@0verride
+protected void onCreate(Bundle savedlnstancestate)
+
+super.on Create(savedlnstanceState); setContentView(R.layout.act/v//y_main), try
+
+lv•(ListView) findViewByld(R.id.list V'ie wcource),- ArrayAdapter String› arr•new 
+ArrayAdapter•String›(this,
+andraid.R.layout.simple_list_item_7,cou rce);
+lv.set Adapter(arr); lv.set0nItemClickListener(this);
+
+catch(Exception e)
+
+Toast.ma/re Tex/(this,e.toString(), Toast.LENGTH_LONfij.show0:}
+}
+@0verride public void
+onltemClick(AdapterView*?• arg0, View arg1, int
+position, long arg3)
+
+Toast.ma/reTex/(this, cource[position] + " is selected.", Toast.LEN/fiTH_SH0Pf}.show0:
+
+
+
+package com.example.fetchdata; import android.os.Bundle;import android.app.Activity;
+import android.view.Menu; import android.view.View; import android.widget.Button; import 
+android.widget.EditText; import android.widget.TextView;
+public class MainActivity extends Activity (
+Button ok; EditText edt; TextView tv; @0verride
+protected void onCreate(Bundle savedlnstancestate) (
+super.on Create(savedlnstanceState); setContentView(R.layout.ac/ivi/y_main), ok • (Button) 
+findViewByld(R.id.d////onfi; edt • (EditText) findViewByld(R.id.editTextlj,'
+tv = (Text View) findViewByld(R.id./ez/F/ei•’fi; ok.setOnClickListener(new View.OnClickListener0 (
+@ Override
+public void onClick(View v) (
+String msg • edt.getText().tostring(); tv.setText(msg);
+}
+});
+
+
+
+
+package com.example.multiplication; import android.os.Bundle;
+import android.app.Activity; import android.view.Menu;import android.view.View;
+import android.widget.Button; import android.widget.EditText; import android.widget.TextView; 
+public class MainActivity extends Activity (
+EditTe xt input Number; Button btn0K; EditText txtResult;
+@ Override
+protected void onCreate(Bundle savedlnst anceState) (
+super.on Create(savedInstanceState); setContentView(R.layout.ac//z//y_ma/n); btnoK • (Button) 
+findViewByld(R.id.bIn0 ,'
+inputNumber = (EditTe xt) findViewByld(R.id.txtNumkbeifi,' I xtResult = (EditTe xt) 
+findViewById(R.id. txt/?esulI'I, btn0K.set0nClickListener(new
+View.0nClickListener0 ( @0ver ride
+public void onClick(View v) { String value • inputNumber.getText(}.toString();
+int number • Integer.parseInf(value); for(int i=1;i•=10;i°+){
+txtResult.setText(txtResult.getText0.to String()+"\n"+number+”x”+i+”="+ (number*i)); }
+
+});
+
+
+IP Address
+package com.example.ipadrs; import java.net.InetAddress; import java.net.Networklnterface; import 
+java.util.Collections; import java.util.List;
+import android.app.Activity;
+import android.net.wifi.WifiManager; import android.os.Bundle;
+import android.text.format.Formatter; import android.view.Menu;
+import android.widget.TextView; public class MainActivity extends Activity (
+TextView tv;
+protected void onCreate(Bundle savedlnstancestate) (
+super.on Create(savedInstanceState); setContentView(R.layout.ac//u//y_ma/jg); tv = (TextView) 
+findViewById(R.id./ez/L’/ew/j; WifiManager wm = (WifiManager) 
+getsystemservice(I///in.seex/c£'j,Strin g ipAddress • getlPAddres's\J, tv.setText("Your Device IP   
+ " + ipAddress);
+)
+public static String getlPAddress0 { tD'(
+String ip+• ;
+List•Networklnterface› interfaces = Collections.lis#NetworkInterface.ge//Ve
+/kror4/n/er/’aces());
+for (Networklnterface intl : interfaces) (
+List*lnetAddress› addrs • Collections.//r/(intf.getlnetAddresses0J: for (InetAddress addr : addrs) 
+(
+if (!addr.isLoopbackAddress0J T
+String sAddr • addr.getHostAddress(}; boolean islPv4 • sAddr.index0f(‘:‘)‹0; if (islPvS)
+return sAddr; else (
+int delim • sAddr.index0f('%');
+ip+= delim•0 ? sAddr.toUpperCase() : sAddr.substring(0, delim).toUpperCase0:
+)
+
+
+
+return ipâ; } catch (Exception ignored) ( }
+return ;
+)
+@0verride public boolean
+onCreate0ptionsMenu(Menu menu) ( getMenulnflater0.inflate(R.menu.main, menu);
+return true;
+)
+
+
+Change the Background colour of the 
+
+package com.example.backgroundcolor; import android.as.Bundle; import android.app.Activity; import 
+android.graphics.Color; import android.view.Menu; import android.view.View; import 
+android.widget.Button;
+public class MainActivity extends Activity (
+Button btnoK; @0verride
+protected void onCreate(Bundle savedlnstancestate) (
+super.on Create(savedlnstanceState); setContentView(R.layout.ac//u//y_ma/o);
+= (Button)
+findViewById(R.id.btnChangeColofi, btn0K.set0nClickListener(new View.OnClickListener() (
+@0verride
+public void onClick(View v) ( setActivityBackgroundColor(Color.6/'tY
+£j;
+
+});
+
+public void setActivityBackgroundColor(int color) ( View view • this.getWindow0.getDecorView(}; 
+view.setBackgroundColor(color);
+)
+
+
+Background Image package
+com.example.backgroundimage;import android.os.Bundle;
+import android.app.Activity; import android.graphics.Color; import android.view.Menu; import 
+android.view.View; import android.widget.Button;
+import android.widget.LinearLayout; public class MainActivity extends Activity (
+Button btnoK; @0verride
+protected void onCreate(Bundle savedlnstance State) ( super.onCreate(savedlnstancestate); 
+setContentView(R.layout.act/u//y_ma/n); btn0K • (Button)
+findViewByld(R.id.blnChangelmage], btn0K.set0nClickListener(new View.0nClickListener() (
+@0verride
+public void onClick(View v) ( LinearLayout mLinearLayout = (LinearLayout) 
+findViewByld(R.id.my1ayoufi,
+mLinearLayout.setBackgroundResourc e(R.drawable.download),
+
+}); }
+
+
+INTENT
+Mainactivity.java
+package com.example.intent; import android.os.Bundle;
+import android.app.Activity;import android.content.Intent;
+import android.view.Menu; import android.view.View;
+public class MainActivity extends Activity (
+@0verride
+protected void onCreate(Bundle savedlnstance State) ( super.onCreate(savedlnstancestate); 
+setContentView(R.layout.ac//u//y_ma/o);
+)
+public void StartNewActivityClick(View v{
+Intent intent • new Intent(this,Second.class); startActivity(intent);
+
+
+Second.java
+package com.example.intent; import android.as.Bundle; import android.app.Activity;
+import android.view.Menu;public class Second extends Activity (
+@0verride
+protected void onCreate(Bundle savedlnstance State) ( super.onCreate(savedlnstancestate); 
+setContentView(R.layout.ac//v//y_secon a};
